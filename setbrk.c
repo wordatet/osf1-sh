@@ -64,7 +64,7 @@ setbrk(incr)
 
 	register uchar_t *a = (uchar_t *)sbrk(incr);
 
-	if((int) a == -1) 
+	if((intptr_t) a == -1) 
 	{ 
 # if DEBUG
 		error("AARGH! setbrk failed");

@@ -337,7 +337,7 @@ uchar_t *s;
          */
 
 #define MIN_BUF_LEN 4096
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
+
 
 static uchar_t *buf = (uchar_t *) NULL;
 static int buf_len  = 0;

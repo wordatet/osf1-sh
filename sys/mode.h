@@ -1,1 +1,2 @@
-#include <sys/stat.h>\n#include <fcntl.h>
+#include <sys/stat.h>
+#include <fcntl.h>

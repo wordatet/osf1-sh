@@ -1,6 +1,6 @@
 # Portable Makefile for OSF/1 v2.0 sh
 CC = cc
-CFLAGS = -O2 -Wall -g -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wno-pointer-sign -I.
+CFLAGS = -O2 -g -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wno-pointer-sign -Wno-implicit-int -Wno-implicit-function-declaration -Wno-return-type -Wno-parentheses -Wno-unused-variable -Wno-incompatible-pointer-types -Wno-missing-braces -Wno-maybe-uninitialized -Wno-switch -Wno-unused-result -I.
 LDFLAGS =
 
 OFILES = main.o args.o blok.o cmd.o ctype.o defs.o \

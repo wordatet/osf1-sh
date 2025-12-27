@@ -332,6 +332,7 @@ clean_args(blk)
 	return(argr);
 }
 
+void
 clearup()
 {
 	/*

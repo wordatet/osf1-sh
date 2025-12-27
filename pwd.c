@@ -76,6 +76,7 @@ static int 	didpwd = FALSE;
 static	void	pwd ();
 static	void	rmslash ();
 
+void
 cwd(dir)
 	register uchar_t *dir;
 {
@@ -103,7 +104,7 @@ cwd(dir)
 			pdir++;
 	}
 	if(*(--pdir)==DOT && pdir>dir && *(--pdir)==SLASH)
-		*pdir = (char) NULL;
+		*pdir = (char) 0;
 	
 
 	/* Remove extra /'s */
@@ -112,7 +113,7 @@ cwd(dir)
 
 	/* Now that the dir is canonicalized, process it */
 
-	if(*dir==DOT && *(dir+1)==(char) NULL)
+	if(*dir==DOT && *(dir+1)==(char) 0)
 	{
 		return;
 	}
@@ -139,7 +140,7 @@ cwd(dir)
 	{
 		if(*dir==DOT && 
 		   *(dir+1)==DOT &&
-		   (*(dir+2)==SLASH || *(dir+2)==(char) NULL))
+		   (*(dir+2)==SLASH || *(dir+2)==(char) 0))
 		{
 			/* Parent directory, so backup one */
 
@@ -162,14 +163,14 @@ cwd(dir)
 			*pcwd++ = *dir++;
 
 	}
-	*pcwd = (char) NULL;
+	*pcwd = (char) 0;
 
 	--pcwd;
 	if(pcwd>cwdname && *pcwd==SLASH)
 	{
 		/* Remove trailing / */
 
-		*pcwd = (char) NULL;
+		*pcwd = (char) 0;
 	}
 	return;
 }
@@ -178,6 +179,7 @@ cwd(dir)
  *	Print the current working directory.
  */
 
+void
 cwdprint()
 {
 	pwd();
@@ -214,7 +216,7 @@ rmslash(string)
 	{
 		/* Remove trailing / */
 
-		*pstring = (char) NULL;
+		*pstring = (char) 0;
 	}
 	return;
 }
@@ -223,7 +225,7 @@ rmslash(string)
 static void
 pwd()
 {
-        if (getwd(cwdname) == NULL)
+        if (getcwd((char *)cwdname, PATH_MAX) == NULL)
                 error(MSGSTR(M_PWDREAD, "pwd: read error in .."));
         didpwd = TRUE;
         return;

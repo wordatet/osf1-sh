@@ -206,7 +206,7 @@ retry:
 					c = '1';
 				}
 				c -= '0';
-				v = ((c == 0) ? cmdadr : (c <= dolc) ? dolv[c] : (uchar_t *)(dolg = 0));
+				v = ((c == 0) ? cmdadr : (c <= dolc) ? dolv[c] : (uchar_t *)(intptr_t)(dolg = 0));
 			}
 			else if (c == '$')
 				v = pidadr;

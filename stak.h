@@ -118,5 +118,7 @@ extern uchar_t		*stakbot;
 /* Top of current item */
 extern uchar_t		*staktop;
 
-/* Used with tdystak */
 extern uchar_t		*savstak();
+
+/* Pop stack block */
+extern void		popstak();

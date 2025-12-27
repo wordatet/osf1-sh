@@ -373,6 +373,7 @@ register uchar_t	*t[];
 static int	pwlist[MAXP];
 static int	pwc;
 
+void
 postclr()
 {
 	register int	*pw = pwlist;
@@ -382,6 +383,7 @@ postclr()
 	pwc = 0;
 }
 
+void
 post(pcsid)
 int	pcsid;
 {

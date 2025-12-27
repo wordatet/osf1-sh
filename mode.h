@@ -52,6 +52,7 @@ static char rcsid[] = "@(#)$RCSfile: mode.h,v $ $Revision: 4.2.5.2 $ (DEC) $Date
  * Copyright 1976, Bell Telephone Laboratories, Inc.
  */
 
+#undef BOOL
 typedef short BOOL;
 
 #define BYTESPERWORD	(sizeof (char *))

@@ -172,7 +172,7 @@ main(int c, uchar_t *v[], uchar_t *e[])
 		if (!strcmp(getptr, __SH_XPG4))
 		{
 
-			sprintf(vec0, "ksh\0");
+			sprintf(vec0, "ksh");
 			v[0] = vec0; /* Change program name vector */
 
 			if (rsflag == 0 || rflag == 0) {
@@ -180,7 +180,7 @@ main(int c, uchar_t *v[], uchar_t *e[])
 				vector = (uchar **) 
 					malloc(sizeof(uchar *) * (c + 1));
 				vector[0] = v[0];
-				sprintf(vec1, "-r\0");
+				sprintf(vec1, "-r");
 				vector[1] = vec1;
 
 				for (i = 1; i < c; i++) {

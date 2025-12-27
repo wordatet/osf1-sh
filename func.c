@@ -53,6 +53,7 @@ static char rcsid[] = "@(#)$RCSfile: func.c,v $ $Revision: 4.2.5.2 $ (DEC) $Date
 #include	<sys/resource.h>
 #include	<sys/param.h>
 
+void
 freefunc(n)
 	struct namnod 	*n;
 {
@@ -190,7 +191,7 @@ freeio(iop)
                                 newline();
 #endif
  
-                                unlink(NLSdecode(iop->ioname));
+                                unlink((char *)NLSndecode(iop->ioname));
 
 			}
 		}

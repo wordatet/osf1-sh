@@ -191,7 +191,7 @@ fault(int sig)
 
 	if (sig == SIGSEGV)
 	{
-		if (setbrk(brkincr) == -1)
+		if (setbrk(brkincr) == (uchar_t *)-1)
 			error(MSGSTR(M_NOSPACE,(char *)nospace));
 	}
 	else if (sig == SIGALRM)

@@ -60,8 +60,10 @@ static char rcsid[] = "@(#)$RCSfile: error.c,v $ $Revision: 4.2.6.2 $ (DEC) $Dat
 /* ========	error handling	======== */
 
 
+void
 errormsg(s1, s2)
-uchar_t	*s1, *s2;
+char	*s1;
+uchar_t	*s2;
 {
 	prp();
 	prs_cntl(s1);
@@ -74,6 +76,7 @@ uchar_t	*s1, *s2;
 	exitval =1;
 }
 
+void
 failed(s1, s2)
 uchar_t	*s1, *s2;
 {
@@ -87,6 +90,7 @@ uchar_t	*s1, *s2;
 	newline();
 	exitsh(ERROR);
 }
+void
 error(s)
 uchar_t	*s;
 {
@@ -122,6 +126,7 @@ int	xno;
 	}
 }
 
+void
 done()
 {
 	register uchar_t	*t;
@@ -145,10 +150,11 @@ done()
 	exit(exitval ? exitval : savexit);
 }
 
+void
 rmtemp(base)
-struct ionod	*base;
+uchar_t	*base;
 {
-	while (iotemp > base)
+	while (iotemp > (struct ionod *)base)
 	{
 		unlink(iotemp->ioname);
 		alloc_free(iotemp->iolink);

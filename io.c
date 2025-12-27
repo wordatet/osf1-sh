@@ -62,6 +62,7 @@ int topfd;
 
 /* ========	input output and file copying ======== */
 
+void
 initf(fd)
 int	fd;
 {
@@ -94,6 +95,7 @@ register uchar_t *s;
 	return(f->sh_feof = (s == 0));
 }
 
+void
 push(af)
 struct fileblk *af;
 {
@@ -122,6 +124,7 @@ pop()
 
 struct tempblk *tmpfptr;
 
+void
 pushtemp(fd,tb)
 	int fd;
 	struct tempblk *tb;
@@ -143,6 +146,7 @@ poptemp()
 		return(FALSE);
 }
 	
+void
 chkpipe(pv)
 int	*pv;
 {
@@ -161,6 +165,7 @@ uchar_t *idf;
 		return(rc);
 }
 
+void
 sh_rename(f1, f2)
 register int	f1, f2;
 {
@@ -202,6 +207,7 @@ tmpfil(tb)
 extern BOOL		nosubst;
 #define			CPYSIZ		512
 
+void
 copy(ioparg)
 struct ionod	*ioparg;
 {
@@ -324,6 +330,7 @@ struct ionod	*ioparg;
 }
 
 
+void
 link_iodocs(i)
 	struct ionod	*i;
 {
@@ -340,6 +347,7 @@ link_iodocs(i)
 }
 
 
+void
 swap_iodoc_nm(i)
 	struct ionod	*i;
 {
@@ -364,6 +372,7 @@ savefd(fd)
 }
 
 
+void
 restore(last)
 	register int	last;
 {
