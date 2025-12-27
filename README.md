@@ -38,4 +38,4 @@ All original copyright headers have been preserved. This code is provided for **
 The modifications, shims, and build system changes created for this port (2025) are licensed under the **0BSD License**. See the `LICENSE` file for details.
 
 ---
-*Developed by Mario (@wordatet) - A labor of love for UNIX history.*
+*Developed by Mario (@wordatet) in collaboration with Gemini and Claude - A labor of love for UNIX history.*
