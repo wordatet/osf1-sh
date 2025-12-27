@@ -1,0 +1,9 @@
+# Build artifacts
+*.o
+sh
+stress.sh.log
+
+# Editor / System files
+*~
+.swp
+.DS_Store
